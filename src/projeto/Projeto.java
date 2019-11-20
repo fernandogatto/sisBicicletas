@@ -3,6 +3,7 @@ package projeto;
 import java.util.ArrayList;
 import java.util.List;
 
+import pedido.encomenda.Encomenda;
 import projeto.modelo.Modelo;
 
 public class Projeto {
@@ -19,13 +20,13 @@ public class Projeto {
 		this.modelos = modelos;
 	}
 	
-	public void verificarModelo(Modelo modelo) {
+	public void verificarModelo(Encomenda encomenda) {
 		boolean modeloExiste = false;
 		
 		for(int i = 0; i < modelos.size(); i++) {
 			String strModelo = modelos.get(i).toString();
 			
-			if(modelo.toString().compareTo(strModelo) == 0) {
+			if(encomenda.toString().compareTo(strModelo) == 0) {
 				modeloExiste = true;
 				i = modelos.size() + 1;
 			}
@@ -36,6 +37,10 @@ public class Projeto {
 		} else {
 			System.out.println("Modelo não existe -> desenvolver projeto");	
 		}
+	}
+	
+	public void desenvolverProjeto() {
+		
 	}
 
 }

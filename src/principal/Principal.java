@@ -49,12 +49,12 @@ public class Principal {
 		
 		Encomenda encomenda1 = new Encomenda(bancoPlastico, guidaoReto, pedalComClip, pneuGrosso, quadroTrilha);
 		encomenda1.mostrarEncomenda();
+		estoque.verificarEstoque(encomenda1);
 		
 		Encomenda encomenda2 = new Encomenda(bancoCouro, guidaoReto, pedalSemClip, pneuGrosso, quadroBMX);
 		encomenda2.mostrarEncomenda();
-
-		estoque.verificarEstoque(encomenda1);
 		estoque.verificarEstoque(encomenda2);
+		
 		
 
 	}

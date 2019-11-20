@@ -100,7 +100,7 @@ public class Modelo {
 		for(int i = 0; i < this.getPeças().size(); i++) {
 			System.out.print("[" + this.getPeças().get(i).getNome() + "] ");
 		}
-		System.out.println("\n");
+		System.out.println("");
 	}
 
 	@Override
