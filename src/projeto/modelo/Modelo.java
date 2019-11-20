@@ -1,0 +1,133 @@
+package projeto.modelo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import peça.Peça;
+import peça.banco.Banco;
+import peça.guidão.Guidão;
+import peça.pedal.Pedal;
+import peça.pneu.Pneu;
+import peça.quadro.Quadro;
+
+public class Modelo {
+
+	private Banco banco;
+	private Guidão guidão;
+	private Pedal pedal;
+	private Pneu pneu;
+	private Quadro quadro;
+	private List<Peça> peças = new ArrayList<>();
+	private List<Modelo> modelos = new ArrayList<>();
+	
+	public Modelo() {}
+	
+	public Modelo(Banco banco, Guidão guidão, Pedal pedal, Pneu pneu, Quadro quadro) {
+		this.banco = banco;
+		this.guidão = guidão;
+		this.pedal = pedal;
+		this.pneu = pneu;
+		this.quadro = quadro;
+		peças.add(banco);
+		peças.add(guidão);
+		peças.add(pedal);
+		peças.add(pneu);
+		peças.add(quadro);
+		modelos.add(this);
+	}
+
+	public Banco getBanco() {
+		return banco;
+	}
+
+	public void setBanco(Banco banco) {
+		this.banco = banco;
+	}
+
+	public Guidão getGuidão() {
+		return guidão;
+	}
+
+	public void setGuidão(Guidão guidão) {
+		this.guidão = guidão;
+	}
+
+	public Pedal getPedal() {
+		return pedal;
+	}
+
+	public void setPedal(Pedal pedal) {
+		this.pedal = pedal;
+	}
+
+	public Pneu getPneu() {
+		return pneu;
+	}
+
+	public void setPneu(Pneu pneu) {
+		this.pneu = pneu;
+	}
+
+	public Quadro getQuadro() {
+		return quadro;
+	}
+
+	public void setQuadro(Quadro quadro) {
+		this.quadro = quadro;
+	}
+
+	public List<Peça> getPeças() {
+		return peças;
+	}
+
+	public void setPeças(List<Peça> peças) {
+		this.peças = peças;
+	}
+
+	public List<Modelo> getModelos() {
+		return modelos;
+	}
+
+	public void setModelos(List<Modelo> modelos) {
+		this.modelos = modelos;
+	}
+
+	public void montarModelo(Banco banco, Guidão guidão, Pedal pedal, Pneu pneu, Quadro quadro) {
+		this.banco = banco;
+		this.guidão = guidão;
+		this.pedal = pedal;
+		this.pneu = pneu;
+		this.quadro = quadro;
+		peças.add(banco);
+		peças.add(guidão);
+		peças.add(pedal);
+		peças.add(pneu);
+		peças.add(quadro);
+		modelos.add(this);
+	}
+	
+	public void mostrarModelo() {
+		System.out.println("### MODELO: ###");
+		for(int i = 0; i < this.getPeças().size(); i++) {
+			System.out.print("[" + this.getPeças().get(i).getNome() + "] ");
+		}
+		System.out.println("\n");
+	}
+	
+	public boolean verificarModelo() {
+		boolean existe = true;
+		for(int i = 0; i < modelos.size(); i++) {
+			for(int j = 0; j < modelos.get(i).getPeças().size(); j++) {
+				int idAtual = modelos.get(i).getPeças().get(j).getId();
+				if(this.getPeças().get(j).getId() != idAtual) {
+					return false;
+				}
+			}
+		}
+		
+		return existe;
+	}
+	
+	
+	
+}
