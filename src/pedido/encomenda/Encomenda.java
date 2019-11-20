@@ -1,4 +1,4 @@
-package projeto.modelo;
+package pedido.encomenda;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import peça.pedal.Pedal;
 import peça.pneu.Pneu;
 import peça.quadro.Quadro;
 
-public class Modelo {
+public class Encomenda {
 
 	private Banco banco;
 	private Guidão guidão;
@@ -19,9 +19,9 @@ public class Modelo {
 	private Quadro quadro;
 	private List<Peça> peças = new ArrayList<>();
 	
-	public Modelo() {}
+	public Encomenda() {}
 	
-	public Modelo(Banco banco, Guidão guidão, Pedal pedal, Pneu pneu, Quadro quadro) {
+	public Encomenda(Banco banco, Guidão guidão, Pedal pedal, Pneu pneu, Quadro quadro) {
 		this.banco = banco;
 		this.guidão = guidão;
 		this.pedal = pedal;
@@ -81,8 +81,8 @@ public class Modelo {
 	public void setPeças(List<Peça> peças) {
 		this.peças = peças;
 	}
-
-	public void montarModelo(Banco banco, Guidão guidão, Pedal pedal, Pneu pneu, Quadro quadro) {
+	
+	public void montarEncomenda(Banco banco, Guidão guidão, Pedal pedal, Pneu pneu, Quadro quadro) {
 		this.banco = banco;
 		this.guidão = guidão;
 		this.pedal = pedal;
@@ -95,23 +95,22 @@ public class Modelo {
 		peças.add(quadro);
 	}
 	
-	public void mostrarModelo() {
-		System.out.println("### MODELO: ###");
+	public void mostrarEncomenda() {
+		System.out.println("### ENCOMENDA: ###");
 		for(int i = 0; i < this.getPeças().size(); i++) {
 			System.out.print("[" + this.getPeças().get(i).getNome() + "] ");
 		}
 		System.out.println("\n");
 	}
-
+	
 	@Override
 	public String toString() {
-		String modelo = "";
+		String encomenda = "";
 		
 		for(int i = 0; i < this.getPeças().size(); i++) {
-			modelo = modelo + "[" + this.getPeças().get(i).getNome() + "] ";
+			encomenda = encomenda + "[" + this.getPeças().get(i).getNome() + "] ";
 		}
 	
-		return modelo;
-	}	
-	
+		return encomenda;
+	}
 }
