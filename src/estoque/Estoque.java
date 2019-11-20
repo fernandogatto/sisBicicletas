@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pedido.encomenda.Encomenda;
+import peça.Peça;
 import projeto.Projeto;
 import projeto.modelo.Modelo;
 
@@ -12,6 +13,7 @@ public class Estoque {
 	private List<Modelo> modelosProntos = new ArrayList<>();
 	private Modelo modelo;
 	private Projeto projeto = new Projeto();
+	private List<Peça> peças = new ArrayList<>();
 	
 	public Estoque() {}
 
@@ -40,11 +42,18 @@ public class Estoque {
 		}
 		
 		if(encomendaExiste) {			
-			System.out.println("Modelo pronto no Estoque -> entregar encomenda");
+			System.out.println("Modelo pronto no Estoque -> entregarEncomenda()");
 		} else {
-			System.out.println("Modelo em falta no Estoque -> verificar modelo em Projeto");
+			System.out.println("Modelo em falta no Estoque -> verificarModelo() em Projeto");
 			projeto.verificarModelo(encomenda);
 		}
+	}
+	
+	public boolean verificarPeçasEstoque(List<Peça> peçasModelo) {
+		boolean suficiente = false;
+		// falta estruturar a logica
+		suficiente = true;
+		return suficiente;
 	}
 	
 }

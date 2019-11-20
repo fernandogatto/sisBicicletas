@@ -13,10 +13,31 @@ import peça.pneu.PneuGrosso;
 import peça.quadro.QuadroBMX;
 import peça.quadro.QuadroTrilha;
 import projeto.modelo.Modelo;
+import rh.Rh;
+import rh.pessoa.Gerente;
+import rh.pessoa.Tecnico;
 
 public class Principal {
 
 	public static void main(String[] args) {
+		
+		// Pessoas
+		
+		Tecnico tecnico1 = new Tecnico("Alexandre", false);
+		Tecnico tecnico2 = new Tecnico("Beatriz", false);
+		Tecnico tecnico3 = new Tecnico("Carlos", false);
+		
+		Gerente gerente1 = new Gerente("Daniela", false);
+		
+		// Rh
+		
+		Rh rh = new Rh();
+		
+		rh.getTecnicos().add(tecnico1);
+		rh.getTecnicos().add(tecnico2);
+		rh.getTecnicos().add(tecnico3);
+		
+		rh.getGerentes().add(gerente1);
 		
 		//	Peças
 		
@@ -54,7 +75,6 @@ public class Principal {
 		Encomenda encomenda2 = new Encomenda(bancoCouro, guidaoReto, pedalSemClip, pneuGrosso, quadroBMX);
 		encomenda2.mostrarEncomenda();
 		estoque.verificarEstoque(encomenda2);
-		
 		
 
 	}
