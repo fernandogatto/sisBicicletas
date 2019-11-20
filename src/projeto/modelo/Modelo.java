@@ -115,17 +115,16 @@ public class Modelo {
 	}
 	
 	public boolean verificarModelo() {
-		boolean existe = true;
 		for(int i = 0; i < modelos.size(); i++) {
 			for(int j = 0; j < modelos.get(i).getPeças().size(); j++) {
 				int idAtual = modelos.get(i).getPeças().get(j).getId();
-				if(this.getPeças().get(j).getId() != idAtual) {
+				if(this.getPeças().get(j).getId() != idAtual) { // não existe modelo
 					return false;
 				}
 			}
 		}
 		
-		return existe;
+		return true;
 	}
 	
 	

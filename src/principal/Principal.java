@@ -29,13 +29,19 @@ public class Principal {
 		QuadroBMX quadroBMX = new QuadroBMX();
 		QuadroTrilha quadroTrilha = new QuadroTrilha();
 		
-		// modelos
+		// modelos pré definidos de fábrica
 		
 		Modelo modelo1 = new Modelo(bancoPlastico, guidaoReto, pedalSemClip, pneuGrosso, quadroTrilha);
 		modelo1.mostrarModelo();
 		
 		Modelo modelo2 = new Modelo(bancoCouro, guidaoCurvo, pedalComClip, pneuFino, quadroTrilha);
 		modelo2.mostrarModelo();
+		
+		// cliente entra com uma encomenda
+		
+		// receberEncomenda()
+		
+		// verifica se modelo de encomenda existe
 	
 		System.out.println(modelo2.verificarModelo());
 		
