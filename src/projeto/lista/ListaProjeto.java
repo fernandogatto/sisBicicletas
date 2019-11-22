@@ -1,21 +1,20 @@
-package estoque;
+package projeto.lista;
+
 
 import java.util.ArrayList;
 import java.util.List;
-
 import pedido.encomenda.Encomenda;
-import peça.Peça;
 import projeto.Projeto;
 import projeto.modelo.Modelo;
 
-public class Estoque {
+public class ListaProjeto {
 
 	private List<Modelo> modelosProntos = new ArrayList<>();
 	private Modelo modelo;
-	private Projeto projeto = new Projeto();
-	private List<Peça> peças = new ArrayList<>();
+	private Projeto projeto;
+
 	
-	public Estoque() {}
+	public ListaProjeto() {}
 
 	public List<Modelo> getModelosProntos() {
 		return modelosProntos;
@@ -25,11 +24,18 @@ public class Estoque {
 		this.modelosProntos = modelosProntos;
 	}
 	
-	public void adicionarModeloEstoque(Modelo modelo) {
+	public void adicionarModeloListaProjeto(Modelo modelo) {
 		modelosProntos.add(modelo);
 	}
 	
-	public void verificarEstoque(Encomenda encomenda) {
+	public void listarModelosProntos() {
+		System.out.println("### MODELOS PRONTOS: ###");
+		for(int i = 0; i < modelosProntos.size(); i++) {
+			System.out.println(modelosProntos.get(i).toString());
+		}
+	}
+	
+	public void verificarListaProjeto(Encomenda encomenda) {
 		boolean encomendaExiste = false;
 		
 		for(int i = 0; i < modelosProntos.size(); i++) {
@@ -42,18 +48,12 @@ public class Estoque {
 		}
 		
 		if(encomendaExiste) {			
-			System.out.println("Modelo pronto no Estoque -> entregarEncomenda()");
+			System.out.println("Modelo pronto na Lista de Projetos -> produzirEncomenda()");
 		} else {
-			System.out.println("Modelo em falta no Estoque -> verificarModelo() em Projeto");
-			projeto.verificarModelo(encomenda);
+			System.out.println("Modelo não existente na Lista de Projetos -> desenvolverProjeto() em Projeto");
+			projeto = new Projeto();
+			projeto.desenvolverProjeto(encomenda, modelosProntos);
 		}
 	}
-	
-	public boolean verificarPeçasEstoque(List<Peça> peçasModelo) {
-		boolean suficiente = false;
-		// falta estruturar a logica
-		suficiente = true;
-		return suficiente;
-	}
-	
+		
 }
