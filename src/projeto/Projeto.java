@@ -5,6 +5,7 @@ import java.util.List;
 
 import pedido.encomenda.Encomenda;
 import projeto.modelo.Modelo;
+import rh.pessoa.Engenheiro;
 import rh.pessoa.Gerente;
 import rh.pessoa.Tecnico;
 
@@ -14,7 +15,8 @@ public class Projeto {
 	private Modelo modelo;
 	private Gerente gerente;
 	private List<Tecnico> tecnicos = new ArrayList<>();
-	
+	private Engenheiro engenheiro;
+
 	public Projeto() {}
 
 	public List<Modelo> getModelos() {
@@ -41,57 +43,32 @@ public class Projeto {
 		this.tecnicos = tecnicos;
 	}
 	
+	public Engenheiro getEngenheiro() {
+		return engenheiro;
+	}
+
+	public void setEngenheiro(Engenheiro engenheiro) {
+		this.engenheiro = engenheiro;
+	}
+
 	public void adicionarModeloProjeto(Modelo modelo) {
 		modelos.add(modelo);
 	}
 	
 	public void desenvolverProjeto(Encomenda encomenda, List<Modelo> modelosProntos) {
 		modelo = new Modelo(encomenda.getBanco(), encomenda.getGuidão(), encomenda.getPedal(), encomenda.getPneu(), encomenda.getQuadro());
-		modelosProntos.add(modelo);		
+		modelosProntos.add(modelo);
 	}
 	
-	/*
-	public void alocarMembrosProjeto() {
-		rh = new Rh();
-		
-		// alocar tecnicos
-		for(int i = 0; i < rh.getTecnicos().size(); i++) {
-			// necessario 3 tecnicos por projeto
-			if(this.getTecnicos().size() < 3) {
-				if(!rh.getTecnicos().get(i).isAlocadoProjeto()) {
-					this.getTecnicos().add(rh.getTecnicos().get(i));
-					rh.getTecnicos().get(i).setAlocadoProjeto(true);
-					System.out.println(rh.getTecnicos().get(i).getNome());
-					System.out.println(this.getTecnicos().size());
-				}				
-			} else {
-				i = rh.getTecnicos().size() + 1;
+	public boolean verificarEngenheirosDisponiveis(List<Engenheiro> engenheiros) {
+		boolean engenheiroDisponivel = false;
+		for(int i = 0; i < engenheiros.size(); i++) {
+			if(!engenheiros.get(i).isAlocadoProjeto()) {
+				engenheiroDisponivel = true;
+				engenheiros.get(i).setAlocadoProjeto(true);
 			}
 		}
-		
-		if(this.getTecnicos().size() < 3) {
-			int qtdTecnicosContratar = 3 - this.getTecnicos().size();
-			System.out.println("Necessário contratar " + qtdTecnicosContratar + " técnicos");
-		}
-		
-		// alocar gerente	
-		for(int i = 0; i < rh.getGerentes().size(); i++) {
-			// necessario 1 gerente por projeto
-			if(this.getGerente() == null) {
-				if(!rh.getGerentes().get(i).isAlocadoProjeto()) {
-					gerente = new Gerente();
-					this.setGerente(gerente);
-					rh.getGerentes().get(i).setAlocadoProjeto(true);
-				}				
-			} else {
-				i = rh.getGerentes().size() + 1;
-			}
-		}
-		
-		if(this.getGerente() == null) {
-			System.out.println("Necessário contratar 1 gerente");
-		}
+		return engenheiroDisponivel;
 	}
-	*/
 
 }

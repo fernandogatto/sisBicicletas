@@ -1,16 +1,16 @@
 package projeto.lista;
 
-
 import java.util.ArrayList;
 import java.util.List;
+
 import pedido.encomenda.Encomenda;
 import projeto.Projeto;
 import projeto.modelo.Modelo;
+import rh.pessoa.Engenheiro;
 
 public class ListaProjeto {
 
 	private List<Modelo> modelosProntos = new ArrayList<>();
-	private Modelo modelo;
 	private Projeto projeto;
 
 	
@@ -35,7 +35,7 @@ public class ListaProjeto {
 		}
 	}
 	
-	public void verificarListaProjeto(Encomenda encomenda) {
+	public void verificarListaProjeto(Encomenda encomenda, List<Engenheiro> engenheiros) {
 		boolean encomendaExiste = false;
 		
 		for(int i = 0; i < modelosProntos.size(); i++) {
@@ -50,9 +50,21 @@ public class ListaProjeto {
 		if(encomendaExiste) {			
 			System.out.println("Modelo pronto na Lista de Projetos -> produzirEncomenda()");
 		} else {
-			System.out.println("Modelo não existente na Lista de Projetos -> desenvolverProjeto() em Projeto");
+			System.out.println("Modelo não existente na Lista de Projetos -> verificarEngenheirosDisponiveis() em Projeto");
 			projeto = new Projeto();
-			projeto.desenvolverProjeto(encomenda, modelosProntos);
+			boolean engenheiroDisponivel = projeto.verificarEngenheirosDisponiveis(engenheiros);
+			
+			if(engenheiroDisponivel) {
+				System.out.println("### ENGENHEIROS DISPONÍVEIS: ###");
+				for(int i = 0; i < engenheiros.size(); i++) {
+					System.out.println(engenheiros.get(i).getNome());
+				}
+			
+				System.out.println("Engenheiros disponíveis -> desenvolverProjeto() em Projeto");
+				projeto.desenvolverProjeto(encomenda, modelosProntos);
+			} else {
+				System.out.println("Nenhum engenheiro disponível. Necessário contratar.");
+			}
 		}
 	}
 		

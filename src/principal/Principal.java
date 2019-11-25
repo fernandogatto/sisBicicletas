@@ -13,10 +13,19 @@ import peça.quadro.QuadroBMX;
 import peça.quadro.QuadroTrilha;
 import projeto.lista.ListaProjeto;
 import projeto.modelo.Modelo;
+import rh.Rh;
+import rh.pessoa.Engenheiro;
 
 public class Principal {
 
 	public static void main(String[] args) {
+		
+		// Pessoas
+		
+		Engenheiro eng1 = new Engenheiro("Alex", false);
+		
+		Rh rh = new Rh();
+		rh.getEngenheiros().add(eng1);
 	
 		//	Peças
 		
@@ -49,11 +58,11 @@ public class Principal {
 		
 		Encomenda encomenda1 = new Encomenda(bancoPlastico, guidaoReto, pedalComClip, pneuGrosso, quadroTrilha);
 		encomenda1.mostrarEncomenda();
-		listaProjeto.verificarListaProjeto(encomenda1);
+		listaProjeto.verificarListaProjeto(encomenda1, rh.getEngenheiros());
 		
 		Encomenda encomenda2 = new Encomenda(bancoCouro, guidaoReto, pedalSemClip, pneuGrosso, quadroBMX);
 		encomenda2.mostrarEncomenda();
-		listaProjeto.verificarListaProjeto(encomenda2);
+		listaProjeto.verificarListaProjeto(encomenda2, rh.getEngenheiros());
 		
 		listaProjeto.listarModelosProntos();
 		
