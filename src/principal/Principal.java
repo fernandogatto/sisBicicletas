@@ -1,5 +1,8 @@
 package principal;
 
+import java.util.List;
+
+import pedido.Pedido;
 import pedido.encomenda.Encomenda;
 import peça.banco.BancoCouro;
 import peça.banco.BancoPlastico;
@@ -65,6 +68,17 @@ public class Principal {
 		listaProjeto.verificarListaProjeto(encomenda2, rh.getEngenheiros());
 		
 		listaProjeto.listarModelosProntos();
+		
+		// Pedidos
+		
+		Pedido pedido1 = new Pedido();
+		pedido1.adicionarEncomenda(encomenda1);
+		pedido1.adicionarEncomenda(encomenda2);
+		pedido1.listarEncomendas();
+		
+		// Produção
+		
+		// producao.produzirEncomenda(pedido1.getEncomendas()); List<Encomenda> encomendas
 		
 	}
 

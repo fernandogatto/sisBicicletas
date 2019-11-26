@@ -10,22 +10,13 @@ import rh.pessoa.Gerente;
 import rh.pessoa.Tecnico;
 
 public class Projeto {
-	
-	private List<Modelo> modelos = new ArrayList<>();
+
 	private Modelo modelo;
 	private Gerente gerente;
 	private List<Tecnico> tecnicos = new ArrayList<>();
 	private Engenheiro engenheiro;
 
 	public Projeto() {}
-
-	public List<Modelo> getModelos() {
-		return modelos;
-	}
-
-	public void setModelos(List<Modelo> modelos) {
-		this.modelos = modelos;
-	}
 
 	public Gerente getGerente() {
 		return gerente;
@@ -49,10 +40,6 @@ public class Projeto {
 
 	public void setEngenheiro(Engenheiro engenheiro) {
 		this.engenheiro = engenheiro;
-	}
-
-	public void adicionarModeloProjeto(Modelo modelo) {
-		modelos.add(modelo);
 	}
 	
 	public void desenvolverProjeto(Encomenda encomenda, List<Modelo> modelosProntos) {
