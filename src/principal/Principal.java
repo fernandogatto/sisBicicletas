@@ -61,13 +61,9 @@ public class Principal {
 		
 		Encomenda encomenda1 = new Encomenda(bancoPlastico, guidaoReto, pedalComClip, pneuGrosso, quadroTrilha);
 		encomenda1.mostrarEncomenda();
-		listaProjeto.verificarListaProjeto(encomenda1, rh.getEngenheiros());
-		
+
 		Encomenda encomenda2 = new Encomenda(bancoCouro, guidaoReto, pedalSemClip, pneuGrosso, quadroBMX);
 		encomenda2.mostrarEncomenda();
-		listaProjeto.verificarListaProjeto(encomenda2, rh.getEngenheiros());
-		
-		listaProjeto.listarModelosProntos();
 		
 		// Pedidos
 		
@@ -76,9 +72,9 @@ public class Principal {
 		pedido1.adicionarEncomenda(encomenda2);
 		pedido1.listarEncomendas();
 		
-		// Produção
+		listaProjeto.verificarListaProjeto(pedido1.getEncomendas(), rh.getEngenheiros());
 		
-		// producao.produzirEncomenda(pedido1.getEncomendas()); List<Encomenda> encomendas
+		listaProjeto.listarModelosProntos();
 		
 	}
 

@@ -45,6 +45,7 @@ public class Projeto {
 	public void desenvolverProjeto(Encomenda encomenda, List<Modelo> modelosProntos) {
 		modelo = new Modelo(encomenda.getBanco(), encomenda.getGuidão(), encomenda.getPedal(), encomenda.getPneu(), encomenda.getQuadro());
 		modelosProntos.add(modelo);
+		System.out.println("Projeto desenvolvido -> produzirEncomenda() em Produção");
 	}
 	
 	public boolean verificarEngenheirosDisponiveis(List<Engenheiro> engenheiros) {
