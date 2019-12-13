@@ -49,25 +49,25 @@ public class ListaProjeto {
 				}
 			}
 			
-			System.out.println("### ENCOMENDA N° " + i + ": ###");
+			System.out.println("### ENCOMENDA No " + i + ": ###");
 			
 			if(encomendaExiste) {			
-				System.out.println("Modelo pronto na Lista de Projetos -> produzirEncomenda() em Produção");
+				System.out.println("Modelo pronto na Lista de Projetos -> produzirEncomenda() em Producao");
 			} else {
-				System.out.println("Modelo não existente na Lista de Projetos -> verificarEngenheirosDisponiveis() em Projeto");
+				System.out.println("Modelo nao existente na Lista de Projetos -> verificarEngenheirosDisponiveis() em Projeto");
 				projeto = new Projeto();
 				boolean engenheiroDisponivel = projeto.verificarEngenheirosDisponiveis(engenheiros);
 				
 				if(engenheiroDisponivel) {
-					System.out.println("### ENGENHEIROS DISPONÍVEIS: ###");
+					System.out.println("### ENGENHEIROS DISPONIVEIS: ###");
 					for(int j = 0; j < engenheiros.size(); j++) {
 						System.out.println(engenheiros.get(j).getNome());
 					}
 				
-					System.out.println("Engenheiros disponíveis -> desenvolverProjeto() em Projeto");
+					System.out.println("Engenheiros disponiveis -> desenvolverProjeto() em Projeto");
 					projeto.desenvolverProjeto(encomenda, modelosProntos);
 				} else {
-					System.out.println("Nenhum engenheiro disponível. Necessário contratar.");
+					System.out.println("Nenhum engenheiro disponivel. Necessario contratar.");
 				}
 			}
 		}

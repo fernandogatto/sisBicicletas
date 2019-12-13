@@ -1,19 +1,17 @@
 package principal;
 
-import java.util.List;
-
+import peca.banco.BancoCouro;
+import peca.banco.BancoPlastico;
+import peca.guidao.GuidaoCurvo;
+import peca.guidao.GuidaoReto;
+import peca.pedal.PedalComClip;
+import peca.pedal.PedalSemClip;
+import peca.pneu.PneuFino;
+import peca.pneu.PneuGrosso;
+import peca.quadro.QuadroBMX;
+import peca.quadro.QuadroTrilha;
 import pedido.Pedido;
 import pedido.encomenda.Encomenda;
-import peça.banco.BancoCouro;
-import peça.banco.BancoPlastico;
-import peça.guidão.GuidãoCurvo;
-import peça.guidão.GuidãoReto;
-import peça.pedal.PedalComClip;
-import peça.pedal.PedalSemClip;
-import peça.pneu.PneuFino;
-import peça.pneu.PneuGrosso;
-import peça.quadro.QuadroBMX;
-import peça.quadro.QuadroTrilha;
 import projeto.lista.ListaProjeto;
 import projeto.modelo.Modelo;
 import rh.Rh;
@@ -30,12 +28,12 @@ public class Principal {
 		Rh rh = new Rh();
 		rh.getEngenheiros().add(eng1);
 	
-		//	Peças
+		//	Pecas
 		
 		BancoCouro bancoCouro = new BancoCouro();
 		BancoPlastico bancoPlastico = new BancoPlastico();
-		GuidãoCurvo guidaoCurvo = new GuidãoCurvo();
-		GuidãoReto guidaoReto = new GuidãoReto();
+		GuidaoCurvo guidaoCurvo = new GuidaoCurvo();
+		GuidaoReto guidaoReto = new GuidaoReto();
 		PedalComClip pedalComClip = new PedalComClip();
 		PedalSemClip pedalSemClip = new PedalSemClip();
 		PneuFino pneuFino = new PneuFino();
@@ -43,7 +41,7 @@ public class Principal {
 		QuadroBMX quadroBMX = new QuadroBMX();
 		QuadroTrilha quadroTrilha = new QuadroTrilha();
 		
-		// Modelos pré definidos de fábrica
+		// Modelos pre definidos de fabrica
 		
 		Modelo modelo1 = new Modelo(bancoPlastico, guidaoReto, pedalComClip, pneuGrosso, quadroTrilha);
 		modelo1.mostrarModelo();

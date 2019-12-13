@@ -3,35 +3,36 @@ package pedido.encomenda;
 import java.util.ArrayList;
 import java.util.List;
 
-import peça.Peça;
-import peça.banco.Banco;
-import peça.guidão.Guidão;
-import peça.pedal.Pedal;
-import peça.pneu.Pneu;
-import peça.quadro.Quadro;
+import peca.Peca;
+import peca.banco.Banco;
+import peca.guidao.Guidao;
+import peca.pedal.Pedal;
+import peca.pneu.Pneu;
+import peca.quadro.Quadro;
+import peca.Peca;
 
 public class Encomenda {
 
 	private Banco banco;
-	private Guidão guidão;
+	private Guidao guidao;
 	private Pedal pedal;
 	private Pneu pneu;
 	private Quadro quadro;
-	private List<Peça> peças = new ArrayList<>();
+	private List<Peca> pecas = new ArrayList<>();
 	
 	public Encomenda() {}
 	
-	public Encomenda(Banco banco, Guidão guidão, Pedal pedal, Pneu pneu, Quadro quadro) {
+	public Encomenda(Banco banco, Guidao guidao, Pedal pedal, Pneu pneu, Quadro quadro) {
 		this.banco = banco;
-		this.guidão = guidão;
+		this.guidao = guidao;
 		this.pedal = pedal;
 		this.pneu = pneu;
 		this.quadro = quadro;
-		peças.add(banco);
-		peças.add(guidão);
-		peças.add(pedal);
-		peças.add(pneu);
-		peças.add(quadro);
+		pecas.add(banco);
+		pecas.add(guidao);
+		pecas.add(pedal);
+		pecas.add(pneu);
+		pecas.add(quadro);
 	}
 
 	public Banco getBanco() {
@@ -42,12 +43,12 @@ public class Encomenda {
 		this.banco = banco;
 	}
 
-	public Guidão getGuidão() {
-		return guidão;
+	public Guidao getGuidao() {
+		return guidao;
 	}
 
-	public void setGuidão(Guidão guidão) {
-		this.guidão = guidão;
+	public void setGuidao(Guidao guidao) {
+		this.guidao = guidao;
 	}
 
 	public Pedal getPedal() {
@@ -74,31 +75,31 @@ public class Encomenda {
 		this.quadro = quadro;
 	}
 
-	public List<Peça> getPeças() {
-		return peças;
+	public List<Peca> getPecas() {
+		return pecas;
 	}
 
-	public void setPeças(List<Peça> peças) {
-		this.peças = peças;
+	public void setPecas(List<Peca> pecas) {
+		this.pecas = pecas;
 	}
 	
-	public void montarEncomenda(Banco banco, Guidão guidão, Pedal pedal, Pneu pneu, Quadro quadro) {
+	public void montarEncomenda(Banco banco, Guidao guidao, Pedal pedal, Pneu pneu, Quadro quadro) {
 		this.banco = banco;
-		this.guidão = guidão;
+		this.guidao = guidao;
 		this.pedal = pedal;
 		this.pneu = pneu;
 		this.quadro = quadro;
-		peças.add(banco);
-		peças.add(guidão);
-		peças.add(pedal);
-		peças.add(pneu);
-		peças.add(quadro);
+		pecas.add(banco);
+		pecas.add(guidao);
+		pecas.add(pedal);
+		pecas.add(pneu);
+		pecas.add(quadro);
 	}
 	
 	public void mostrarEncomenda() {
 		System.out.println("### ENCOMENDA: ###");
-		for(int i = 0; i < this.getPeças().size(); i++) {
-			System.out.print("[" + this.getPeças().get(i).getNome() + "] ");
+		for(int i = 0; i < this.getPecas().size(); i++) {
+			System.out.print("[" + this.getPecas().get(i).getNome() + "] ");
 		}
 		System.out.println("");
 	}
@@ -107,8 +108,8 @@ public class Encomenda {
 	public String toString() {
 		String encomenda = "";
 		
-		for(int i = 0; i < this.getPeças().size(); i++) {
-			encomenda = encomenda + "[" + this.getPeças().get(i).getNome() + "] ";
+		for(int i = 0; i < this.getPecas().size(); i++) {
+			encomenda = encomenda + "[" + this.getPecas().get(i).getNome() + "] ";
 		}
 	
 		return encomenda;
