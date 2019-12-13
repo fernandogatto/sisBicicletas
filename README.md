@@ -4,7 +4,12 @@
 <h3>Professora: Flavia Bernardini – <a href="mailto:fcbernardini@ic.uff.br" target="_blank">fcbernardini@ic.uff.br</a><h3>
 <h4>Semestre: 2019.2 – 6as feiras das 18:00 às 22:00</h4>
 
-<p>Trabalho Prático</p>
+<h2>Integrantes</h2>
+<p>Fernando Gatto</p>
+<p>Luann Sapucaia</p>
+<p>Matheus Giron</p>
+
+<h2>Trabalho Prático</h2>
 
 <p>O objetivo do trabalho prático de cada grupo é desenvolver uma parte de um sistema computacional para uma fábrica de bicicletas.</p>
 
