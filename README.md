@@ -30,6 +30,51 @@
 
 <p>Os diversos setores podem ser atendidos por um mesmo módulo do sistema, ou um único setor pode ser atendido por mais de um módulo do sistema, ficando a critério do projeto de software implementado.</p>
 
+<h2>O que foi desenvolvido</h2>
+
+<h3>Hierarquia de classes</h3>
+
+<p>Peça</p>
+<ul>
+  <li>Banco</li>
+  <ul>
+    <li>BancoCouro</li>
+    <li>BancoPlastico</li>
+  </ul>
+  <li>Guidao</li>
+  <ul>
+    <li>GuidaoCurvo</li>
+    <li>GuidaoReto</li>
+  </ul>
+  <li>Pedal</li>
+  <ul>
+    <li>PedalComClip</li>
+    <li>PedalSemClip</li>
+  </ul>
+  <li>Pneu</li>
+  <ul>
+    <li>PneuGrosso</li>
+    <li>PneuFino</li>
+  </ul>
+  <li>Quadro</li>
+  <ul>
+    <li>QuadroBMX</li>
+    <li>QuadroTrilha</li>
+  </ul>
+</ul>
+
+<p>Encomenda é a classe responsável pelo modelo de bicicleta montado pelo cliente.</p>
+
+<p>Modelo é a classe responsável pelo modelo de bicicleta da fábrica.</p>
+
+<p>Encomenda e Modelo têm uma lista de peças.</p>
+
+<p>Pedido é a classe responsável por agrupar a lista de encomendas de um cliente.</p>
+
+<p>ListaProjeto é a clase responsável pela lista de modelos de bicicleta prontos na fábrica. Ao se fazer um pedido, é preciso verificar se na fábrica existe um modelo correspondente ao da encomenda. Isso é feito através do método <strong>verificarListaProjeto</strong>. Se existir, essa encomenda é passada para Produção para que ela seja produzida. Senão, é preciso verificar se existem engenheiros disponíveis para que o projeto do novo modelo seja desenvolvido. Então a lista de engenheiros, alocada no RH, é passada por parâmetro e é feita essa verificação através do método <strong>verificarEngenheirosDisponiveis</strong>, que fica na classe Projeto. Se existirem engenheiros disponíves, a encomenda é desenvolvida em <strong>desenvolverProjeto</strong>, que também fica em Projeto. Senão, o RH fica responsável por contratar novos engenheiros.</p>
+
+<p>Em <strong>desenvolverProjeto</strong>, é criado um novo modelo igual ao da encomenda e este modelo é adicionado à lista de modelos prontos da fábrica. Então, o modelo pode ser passado para Produção para que seja desenvolvido.</p>
+
 <h2>Dificuldades práticas</h2>
 
 <p>Entender a relação entre Modelo e Projeto;</p>
