@@ -29,3 +29,10 @@
 <p>Admite-se que não faltam recursos financeiros para a produção, e assim nunca há impedimento de compras e contratações (setor de RH);</p>
 
 <p>Os diversos setores podem ser atendidos por um mesmo módulo do sistema, ou um único setor pode ser atendido por mais de um módulo do sistema, ficando a critério do projeto de software implementado.</p>
+
+<h2>Dificuldades práticas</h2>
+
+<p>Entender a relação entre Modelo e Projeto;</p>
+<p>Priorizar os métodos de cada classe;</p>
+<p>Relacionar Encomenda com Projeto;</p>
+<p>Verificar encomendas a partir da lista de modelos prontos de Projeto.</p>
